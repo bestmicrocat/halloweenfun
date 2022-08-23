@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trick or Treat</title>
+    <meta charset="UTF-8">
+    <meta lang="en-EN">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    body{
+        background-image:url("halloween1.jpg");
+        background-size:cover;
+        font-family:Pacifico-Regular;
+        margin:0;
+        padding:0;
+        display:flex;
+        flex-direction:column;
+    }
+    img{
+        width:200px;;
+    }
+    #skeletonjackimg{
+        width:100px;
+    }
+    #frankensteinimg{
+        width:60px;
+    }
+    @font-face{
+        font-family:Pacifico-Regular;
+        src:url(Pacifico-Regular.ttf);
+    }
+    @media only screen and (max-width: 950px) {
+            h3{
+                font-size:12px;
+                color:azure;
+            }
+        .pagefooter{
+        display:none;
+        }
+    }
+
+    .allbutfooter{
+        display: flex;
+        flex-direction:column;
+    }
+    /*large screen*/
+    .wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+    }
+    header{
+        color:orangered;
+    }
+    #section1 h1{
+        color:white;
+    }
+    #section2 h1{
+        color:white;
+    }
+    #section2{
+        display:none;
+    }
+    #textonclick1{
+        display:none;
+    }
+    #textonclick2{
+        display:none;
+    }
+    .container{
+        background-color: rgba(170, 57,57, 0.80);
+        width:fit-content;
+        display:flex;
+        flex-wrap:wrap;
+        flex-direction:column;
+        padding: 20px;
+    }
+    .containerbox{
+        display:flex;
+        flex-direction:row;
+    }
+    .text1{
+        font-family:Arial, Helvetica, sans-serif;
+        letter-spacing:3px;
+    }
+    .text2{
+        font-family:Arial, Helvetica, sans-serif;
+        letter-spacing: 3px;
+        text-align:center;
+    }
+    .text3{
+        font-family:Arial, Helvetica, sans-serif;
+        letter-spacing: 3px;
+        text-align:center;
+    }
+    button:hover{
+        color:brown;
+        background-color:aqua;
+    }
+    .pagefooter{
+        position:absolute;
+        bottom:0;
+        left:0;
+        right:0;
+        margin: 0 auto;
+        font-family:arial, sans-serif;
+        background-color: burlywood;
+        color:white;
+        width:100%;
+        height:40px;
+        padding-top:30px;
+        text-align:center;
+    }
+</style>
+</head>
+<body>
+<div class="allbutfooter">
+<header>
+    <h1>Trick or treat? Happy Halloween!</h1>
+</header>
+
+    <div class="wrapper">
+        <section id="section1">
+            <div class="container container1">
+                    <div class="header1">
+                        <h1>Trick or treat?</h1>
+                    </div>
+                    <div class="text1">
+                        <h3>Knock, knock, knock!<br>
+                            Ring, ring, ring!<br>
+                            Trick or treat!
+                        </h3>
+                    </div>
+            <button type="button" class="button1" onclick="clickbutton()">Guess!</button>
+            </div>
+        </section>
+<section id="section2">
+        <div class="container containerbox">
+            <div class="container container2">
+                <div class="header2"> 
+                    <h1>Halloween is here</h1>
+                </div>
+                <div class="text2">
+                    <h3>
+                        It's that time of the year, <br>
+                        when Halloween is here! <br>
+                        with ghosts, graveyards and <br>
+                        spooky tombs, <br>
+                        And kids walking around in costumes.<br>
+                        Is it spooky or is it funny?<br>
+                        Do you dare kick the mummy?<br>
+                        <img src="mummy.png">
+                    </h3>
+            <button type="button" class="button2" onclick="clickbutton2()" id="button2">Show me!</button>
+                </div>
+                 <div class="textonclick" id="textonclick1">Skeleton Jack is back<br>
+                 <img src="skeletonjack.png" alt="skeleton jack" id="skeletonjackimg">
+                </div>
+            </div>
+            <div class="container container3">
+                <div class="header3">
+                    <h1>Halloween fun</h1>
+                </div>
+                <div class="text3">
+                    <h3>
+                        I like the lively Jack'o'lanterns<br>
+                        That wink and blink at me<br>
+                        The screeching bats and creeping cats<br>
+                        Are funny as can be.<br>
+                        <img src="pumpkin.jpg">
+                    </h3>
+            <button type="button" class="button3" onclick="clickbutton3()" id="button3">Surprise!</button>
+                </div>
+                <div class="textonclick" id="textonclick2">Frankenstein is funny!<br>
+                    <img src="frankenstein.jpg" alt="surprise character" id="frankensteinimg">
+            </div>
+        </div>
+</section>
+    </div>
+
+</div>
+<div class="pagefooter">
+    &copy; Designed by: BlueHoneyCreeper Design
+</div>  
+<script>
+    /*the button hides section1 and shows section2*/
+    function clickbutton(){
+        document.getElementById("section1").style.display="none";
+        document.getElementById("section2").style.display="block";
+    }
+
+    /*a button that shows and hides the text Skeleton Jack is back and the image in div*/
+    function clickbutton2(){
+        var myText1=document.getElementById("textonclick1");
+        myText1.style.display="block";
+
+        var buttonValue1=document.getElementById("button2");
+        if(buttonValue1.textContent=="Show me!")
+        {
+        buttonValue1.textContent="Hide Jack";
+
+        }
+        else{
+        buttonValue1.textContent="Show me!";
+        myText1.style.display="none";
+        }
+
+    }
+    /*a button that shows and hides the text Frankenstein and the image in div*/
+    function clickbutton3(){
+        var myText2=document.getElementById("textonclick2");
+        myText2.style.display="block";
+
+        var buttonValue2=document.getElementById("button3");
+        if(buttonValue2.textContent=="Surprise!")
+        {
+        buttonValue2.textContent="Hide Frankenstein";
+        }
+        else{
+        buttonValue2.textContent="Surprise!";
+        myText2.style.display="none";
+        }
+
+    }
+</script>
+</body>
+</html>
